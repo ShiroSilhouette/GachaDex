@@ -1,0 +1,2 @@
+# GachaDex
+Project GachaDex

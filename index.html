@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dark Background</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+		.navbar {
+			background-color: black;
+			margin: 0 auto;
+			max-width: 1250px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+        ..nav-item1 {
+        display: inline-block;
+        padding: 10px;
+      }
+      
+      .square {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 200px;
+        background-color: black;
+      }
+
+	</style>
+</head>
+<body class="bg-dark">
+	<h1 class="text-light">1</h1>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<a class="navbar-brand" href="#">Logo</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+                <li class="nav-item1">
+					<a class="nav-link" href="#">List</a>
+                    <div class="square"></div>
+				</li>
+                <li class="nav-item">
+					<a class="nav-link" href="#">Donate</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+	$(document).ready(function() {
+  $(".nav-item1").click(function(event) {
+    event.stopPropagation();
+    $(".nav-item1.active").removeClass("active");
+    $(this).addClass("active");
+    
+    const square = $(".square");
+    if (square.is(":visible")) {
+      square.hide();
+    } else {
+      square.show();
+    }
+  });
+  
+  $(document).click(function(event) {
+    const square = $(".square");
+    if (!square.is(event.target) && square.has(event.target).length === 0) {
+      square.hide();
+      $(".nav-item1.active").removeClass("active");
+    }
+  });
+});
+
+
+        
+	</script>
+</body>
+</html>

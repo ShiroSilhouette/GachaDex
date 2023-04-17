@@ -40,6 +40,7 @@ function App() {
           <img className="square-img" src="/images/arknights.png" alt="square" />
         </li>
       </ul>
+
       <br></br>
   <ul className="grid-item">
         <li>
@@ -49,6 +50,7 @@ function App() {
           <img className="square-img" src="/images/arknights.png" alt="square" />
         </li>
       </ul>
+
       <br></br>
   <ul className="grid-item">
         <li>

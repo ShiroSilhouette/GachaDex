@@ -69,10 +69,11 @@ ul {
 }
 
 body {
-  background-color: #252526;
+  background-color: #252526 !important;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 
 .rounded-container {
   border-radius: 20px;
@@ -87,4 +88,20 @@ body {
   
 }
 
+.my-nav {
+  background-color: #252526;
+  border-bottom: 0.5px solid #323233;
+  color: #fff;
+}
 
+.my-nav a {
+  color:  #808080;
+}
+
+.my-nav a:hover{
+  color: #fff;
+}
+
+.space{
+  margin-left: 5px;
+}
